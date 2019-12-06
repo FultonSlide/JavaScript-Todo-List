@@ -1,5 +1,5 @@
 body{
-    background: #352f5b;
+    background: #673232;
 }
 .container{
     max-width: 400px;
@@ -12,8 +12,11 @@ input[type=text]:focus{
     max-width: 400px;
 }
 .todos li{
-    background: #423a6f;
+    background: #893737;
 }
 .delete{
     cursor: pointer;
+}
+.filtered{
+    display: none !important;
 }
