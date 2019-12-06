@@ -17,8 +17,8 @@ const generateTemplate = (todo) => {
 
 //Hides Todos that don't match what the user searches
 const filterTodos = (term) => {
-    const noneMatchedTodos = Array.from(todoList.children).filter((todo) => !todo.textContent.includes(term));
-    const matchedTodos =Array.from(todoList.children).filter((todo) => todo.textContent.includes(term));
+    const noneMatchedTodos = Array.from(todoList.children).filter((todo) => !todo.textContent.toLowerCase().includes(term));
+    const matchedTodos =Array.from(todoList.children).filter((todo) => todo.textContent.toLowerCase().includes(term));
 
     noneMatchedTodos.forEach((todo) => todo.classList.add('filtered'));
     matchedTodos.forEach((todo) => todo.classList.remove('filtered'));
@@ -44,6 +44,6 @@ todoList.addEventListener('click', (e) => {
 
 //Search handler
 search.addEventListener('keyup', () => {
-    const term = search.value.trim();
+    const term = search.value.trim().toLowerCase();
     filterTodos(term);
 });
